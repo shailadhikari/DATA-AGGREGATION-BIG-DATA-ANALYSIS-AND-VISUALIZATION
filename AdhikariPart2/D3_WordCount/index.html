@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
+  <style>
+    .content{
+        display: none;
+    }
+    body {
+        font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+    }
+    .legend {
+        border: 1px solid #555555;
+        border-radius: 5px 5px 5px 5px;
+        font-size: 0.8em;
+        margin: 10px;
+        padding: 8px;
+    }
+    .bld {
+        font-weight: bold;
+    }
+</style>
+    </head>
+
+  <body style="text-align: center" onload="bodyOnLoad();">
+        <div style="text-align: center">
+        <h2><b>CSE 587 Lab - 2 (DATA AGGREGATION, BIG DATA ANALYSIS AND VISUALIZATION)</b></h2>
+        <h3><b>Word Cloud (Word Count)</b></h3>
+        <select name="Dropdown" onchange="report(this.value)" >
+                <option value="Immigration">NYTimes_Immigration</option>
+                <option value="H1B">NYTimes_H1B</option>
+                <option value="Trump">NYTimes_Trump</option>
+                <option value="tw_Immigration">Twitter_Immigration</option>
+                <option value="tw_H1B">Twitter_H1B</option>
+                <option value="tw_Trump">Twitter_Trump</option>
+        </select>
+        <br/>
+        <br/>
+        </div>
+        <div class = "preload">
+                <img src="loading-spinner.gif" height="42" width="42"/>
+        </div>
+  <script>
+  $(function(){
+    $(".preload").fadeOut(4000, function(){
+        $(".content").fadeIn(1000);
+    });
+  });
+  </script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="d3.layout.cloud.js"></script>
+  <script src="script.js"></script>
+  </body>
+
+</html>
